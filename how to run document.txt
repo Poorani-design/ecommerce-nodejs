@@ -1,0 +1,17 @@
+npm init -y
+npm i
+npm init -y
+npm i
+
+//install nodemon
+npm i -g nodemon
+npm i express
+npm i mysql
+npm i cors
+npm i mysql2 bcryptjs jsonwebtoken
+
+//TO RUN THE PROJECT
+nodemon start
+
+//TO GET CURRENT DATE AND TIME WE HAVE TO INSTALL DATE AND TIME
+npm install node-datetime --save

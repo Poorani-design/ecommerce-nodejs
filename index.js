@@ -77,7 +77,7 @@ server.get("/adminuser", (req, res) => {
 });
 
 // get all brand data
-server.get("/brand", (req, res) => {
+server.get("/viewBrand", (req, res) => {
   // console.log("get user successfully....");
   let qr = "select * from brand";
   // console.log("get ll ")
@@ -97,7 +97,7 @@ server.get("/brand", (req, res) => {
   });
 });
 // create brand data ===> POST
-server.post("/brand/create", (req, res) => {
+server.post("/addBrand", (req, res) => {
   console.log(req, "request");
   console.log(res, "response");
   console.log(req.body, "create data");

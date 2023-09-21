@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2023 at 02:53 PM
+-- Generation Time: Sep 21, 2023 at 01:47 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -54,6 +54,34 @@ INSERT INTO `admin_users` (`user_id`, `email`, `username`, `password`, `firstnam
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `brand`
+--
+
+CREATE TABLE `brand` (
+  `brand_id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `img` varchar(100) NOT NULL,
+  `status_id` int(11) NOT NULL,
+  `createdat` varchar(100) NOT NULL,
+  `updatedat` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `brand`
+--
+
+INSERT INTO `brand` (`brand_id`, `name`, `img`, `status_id`, `createdat`, `updatedat`) VALUES
+(1, 'HP', 'img', 0, 'today', 'today'),
+(2, 'Samsung', 'img', 0, 'yesterday', 'yesterday'),
+(8, 'Redmi', 'img', 0, 'today', 'today'),
+(9, '', '', 0, '', ''),
+(10, 'null', 'C:fakepath	yping issue in hcl.png', 0, 'null', 'null'),
+(11, 'redmi', 'C:fakepath	yping issue in hcl.png', 0, '', ''),
+(12, 'Lenovo', 'C:fakepath	yping issue in hcl.png', 0, '', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `customer`
 --
 
@@ -90,6 +118,12 @@ ALTER TABLE `admin_users`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- Indexes for table `brand`
+--
+ALTER TABLE `brand`
+  ADD PRIMARY KEY (`brand_id`);
+
+--
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
@@ -104,6 +138,12 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `admin_users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `brand`
+--
+ALTER TABLE `brand`
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `customer`

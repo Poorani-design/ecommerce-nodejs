@@ -75,3 +75,56 @@ server.get("/adminuser", (req, res) => {
     }
   });
 });
+
+// get all brand data
+server.get("/brand", (req, res) => {
+  // console.log("get user successfully....");
+  let qr = "select * from brand";
+  // console.log("get ll ")
+  console.log(qr);
+  db.query(qr, (err, result) => {
+    console.log(result);
+    if (err) {
+      console.log("Error : ", err);
+      return err;
+    }
+    if (result.length > 0) {
+      res.send({
+        message: "get all brand details",
+        data: result,
+      });
+    }
+  });
+});
+// create brand data ===> POST
+server.post("/brand/create", (req, res) => {
+  console.log(req, "request");
+  console.log(res, "response");
+  console.log(req.body, "create data");
+  
+  let name = req.body.name;
+  let img = req.body.img;
+  let statusid = req.body.statusid;
+  let createdat=req.body.createdat;
+  let updatedat=req.body.updatedat;
+  console.log(name,img,statusid,createdat,updatedat);
+  let qr = `INSERT INTO brand(name, img, status_id, createdat, updatedat) VALUES(
+              '${name}',
+              '${img}',
+              '${statusid}',
+              '${createdat}',
+              '${updatedat}'
+              )`;
+              console.log(qr)
+  db.query(qr, (err, result) => {
+    if (err) {
+      console.log(err, "error");
+    }
+    console.log(result, "result");
+    res.send({
+      message: "single brand data inserted successfully..",
+    });
+  });
+});
+
+
